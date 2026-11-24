@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & Github</title>
+</head>
+<body>
+    <h1>Notes on Git & Github</h1>
+    <hr>
+    <h2>Configure Git</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git config --global user.name "Your Name"</span>
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git config --global user.email "you@example.com"</span>
+        </li>
+    </ul>
+    <h2>Basic Commands</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git --version</span> (to check the version installed)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">cd .\filepath</span> (to go inside a file/folder)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">cd ..</span> (to come out of a file/folder)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">ls</span> (shows the list of files)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">ls -hidden</span> (shows the list of hidden files. every GitHub repository has a .git file as hidden file, any repository without it is not a GitHub repository but a local repository.)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git log</span> (shows all the commits with messages)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git rm filename</span> (removes/deletes the file)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git rm -r foldername</span> (removes/deletes the folder)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git mv name newname</span> (renames a file)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git mv file folder/file</span> (moves file into folder)
+        </li>
+    </ul>
+
+    <h2>Git Clone</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git clone link</span> (to clone the remote repository in local space. the link is from GitHub repository - <> Code - local - HTTPS)
+        </li>
+    </ul>
+
+    <h2>Git Init</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">mkdir foldername</span> (to make a local repository or folder)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git init</span> (to make the local repository a GitHub repository, but still not reflected on GitHub)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git remote add origin repositorylink</span> (to connect the local repository the GitHub repository that's link is given, now reflected on GitHub)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git remote -v</span> (to verify if local is successfully connected to remote. gives the GitHub repo link)
+        </li>
+    </ul>
+
+    <h2>Stage, Commit, Push & Pull</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git status</span> to check if everything is upto date or anything is under :
+            <ul>
+                <li style="font-size: 16px;">
+                    <span style="font-weight: bold;">Untracked files</span> - new file created and not added
+                </li>
+                <li style="font-size: 16px;">
+                    <span style="font-weight: bold;">Changes not staged for commit</span> - changes made inside a file but not added
+                </li>
+                <li style="font-size: 16px;">
+                    <span style="font-weight: bold;">Changes to be committed</span> - changes are added or staged but not committed
+                </li>
+                <li style="font-size: 16px;">
+                    <span style="font-weight: bold;">Your branch is ahead of 'origin/main'</span> - changes are committed with message but not pushed to repository
+                </li>
+            </ul>
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git add filename</span> (adding/staging any changes made inside a file or any new file created)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git add .</span> (adding/staging all the changes)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git commit -m "message"</span> (committing the changes with a message)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git push origin main</span> (uploading local repo content to remote repo)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git pull origin main</span> (to fetch and download content from remote repo and immediately update the local repo to match that content)
+        </li>
+    </ul>
+
+    <h2>Git Branch</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git branch</span> (shows the branches and the current branch that we are on is colored green)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git checkout -b  branchname</span> (creates a new branch)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git checkout branchname</span> (takes to the branch that's name is given)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git branch -M branchname</span> (renames the branch)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git branch -d branchname</span> (deletes the branch with that name, but we have to be on the main branch to delete)
+        </li>
+        <br>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">Few basic steps on branches: </span>
+            <ul style="font-size: 16px;">
+                <li>
+                    to make changes on a branch, we have to be on that branch (*git checkout branchname* takes us to that branch).
+                </li>
+                <li>
+                    after making the changes we do "git add ./git add filename" to stage the changes and "git commit -m message" to commit the changes.
+                </li>
+                <li>
+                    now instead of doing "git push/ git push origin main", to push the changes only on a branch we have to write <span style="font-weight: bold;">git push origin branchname</span>.
+                </li>
+                <li>
+                    now a new branch with all the changes will be reflected on GitHub
+                </li>
+            </ul>
+        </li>
+        <br>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git diff main</span> (shows the differences between 2 branches: main and the branch that we are on. we can see difference between any 2 branches. we can any branch name on the command and compare it with the current branch)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git merge branchname</span> (to merge the branches (current branch and the branch name that is given in the command), this is done on VSCode command line)
+        </li>
+        <br>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">PULL REQUEST</span>
+            <ul style="font-size: 16px;">
+                <li>
+                    PR is done on GitHub website. on GitHub we do a pull request, so that the merge can be compared and then accepted to be merged.
+                </li>
+                <li>
+                    <span style="font-weight: bold;">Compare & pull request</span> -> Add message and description for the request -> <Create style="font-weight: bold;">Create pull request</span> -> GitHub checks if it can be automatically changed or not, checks for conflicts -> <span style="font-weight: bold;">Merge pull request</span> -> <span style="font-weight: bold;">Confirm merge</span> -> successful
+                </li>
+                <li>
+                    After doing successful merge on GitHub we have to do <span style="font-weight: bold;">git pull origin main</span> command to reflect the changes on local repo.
+                </li>
+                <li>
+                    now a new branch with all the changes will be reflected on GitHub
+                </li>
+            </ul>
+        </li>
+        <br>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">Resolving Merge Conflicts</span>
+            <ul style="font-size: 16px;">
+                <li>
+                    after merging some conflicts can occur. this conflicts can be handled using Merge Conflicts.
+                </li>
+                <li>
+                    <span style="font-weight: bold;">Accept Current Change</span> - change made on current branch.
+                </li>
+                <li>
+                    <span style="font-weight: bold;">Accept Incoming Change</span> - change made on the another branch.
+                </li>
+                <li>
+                    <span style="font-weight: bold;">Accept Both Changes</span> - both changes.
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Undoing the Staged Changes</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git reset filename</span> (undoing the changes made on the file which were staged/added earlier with "git add ." command)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git reset</span> (undoing all the changes that were made which were staged/added earlier with "git add ."" command)
+        </li>
+        <li style="font-size: 18px;">
+            "git reset/git reset filename" basically undos the staging/adding part, nothing is removed from the code itself, only the staging is removed.
+        </li>
+    </ul>
+
+    <h2>Undoing the Committed Changes</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git reset HEAD~1</span> (undos the last commit made)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git reset commithash</span> (undos the commit and takes the head to that commit whose commit hash is given, that becomes the latest commit and the other commits that were made after it, becomes not committed. commit hash is copied from the log.)
+        </li>
+        <li style="font-size: 18px;">
+            <span style="font-weight: bold;">git reset --hard commithash</span> (undos commits and also refllects that)
+        </li>
+    </ul>
+
+    <h2>Fork</h2>
+    <ul>
+        <li style="font-size: 18px;">
+            (a new repository that shares code and visibility settings with the original "upstream" repository. basically it is a rough copy of another repository, can be from another account)
+        </li>
+    </ul>
+</body>
+</html>
